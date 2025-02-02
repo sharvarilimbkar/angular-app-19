@@ -8,7 +8,7 @@
 <label>Search todos</label>
 <input placeholder="search todo..." [(ngModel)]="searchTerm" name="searchTerm" />
 <ul class="todos">
-    @for (item of toDoItems()| filterTodo: searchTerm(); track item.id) {
+    @for (item of toDoItems() | filterTodo : searchTerm(); track item.id) {
     <app-todo-list [todo]="item" (todoToggele)="updateTodosCompleted($event)"></app-todo-list>
     }
 </ul>

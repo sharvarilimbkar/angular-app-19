@@ -6,14 +6,12 @@ import { NgIf } from '@angular/common';
 import { TodoListComponent } from '../components/todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
 import { FilterTodoPipe } from '../pipes/filter-todo.pipe';
-// import { TodosService } from '../services/todos.service';
 
 @Component({
   selector: 'app-todo',
-  imports: [NgIf, TodoListComponent, FormsModule, FilterTodoPipe],
+  imports: [ TodoListComponent, FormsModule, FilterTodoPipe],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss',
-  // providers: [TodosService]
 })
 export class TodoComponent implements OnInit{
  
