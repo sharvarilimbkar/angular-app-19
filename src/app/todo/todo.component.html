@@ -1,0 +1,14 @@
+<h2>Todo List</h2>
+
+<!-- <p *ngIf="!toDoItems().length">Loading....</p> -->
+@if (!toDoItems().length) {
+<p>Loading.....</p>
+}
+
+<label>Search todos</label>
+<input placeholder="search todo..." [(ngModel)]="searchTerm" name="searchTerm" />
+<ul class="todos">
+    @for (item of toDoItems()| filterTodo: searchTerm(); track item.id) {
+    <app-todo-list [todo]="item" (todoToggele)="updateTodosCompleted($event)"></app-todo-list>
+    }
+</ul>
